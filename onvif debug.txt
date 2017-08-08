@@ -1,0 +1,80 @@
+﻿onvifserver invoked oom-killer: gfp_mask=0x201da, order=0, oom_adj=0, oom_score_
+adj=0                                                                           
+Backtrace:                                                                      
+[<c0011fdc>] (dump_backtrace+0x0/0x110) from [<c0417dfc>] (dump_stack+0x18/0x1c)
+ r6:000039cd r5:00000279 r4:c04efc0c r3:c057a900                                
+[<c0417de4>] (dump_stack+0x0/0x1c) from [<c04186f8>] (dump_header.isra.16+0x58/0
+x150)                                                                           
+[<c04186a0>] (dump_header.isra.16+0x0/0x150) from [<c041883c>] (oom_kill_process
+.part.19.constprop.23+0x4c/0x21c)                                               
+ r8:00000000 r7:00000000 r6:000039cd r5:00000279 r4:c04efc0c                    
+[<c04187f0>] (oom_kill_process.part.19.constprop.23+0x0/0x21c) from [<c0066cf0>]
+ (out_of_memory+0x310/0x32c)                                                    
+[<c00669e0>] (out_of_memory+0x0/0x32c) from [<c006a020>] (__alloc_pages_nodemask
++0x680/0x694)                                                                   
+[<c00699a0>] (__alloc_pages_nodemask+0x0/0x694) from [<c0065d80>] (filemap_fault
++0x21c/0x3f4)                                                                   
+[<c0065b64>] (filemap_fault+0x0/0x3f4) from [<c007a53c>] (__do_fault+0x70/0x498)
+[<c007a4cc>] (__do_fault+0x0/0x498) from [<c007d040>] (handle_pte_fault+0x74/0x6
+0c)                                                                             
+[<c007cfcc>] (handle_pte_fault+0x0/0x60c) from [<c007d658>] (handle_mm_fault+0x8
+0/0xb4)                                                                         
+[<c007d5d8>] (handle_mm_fault+0x0/0xb4) from [<c0014ae8>] (do_page_fault+0x164/0
+x27c)                                                                           
+[<c0014984>] (do_page_fault+0x0/0x27c) from [<c0008430>] (do_PrefetchAbort+0x3c/
+0xa0)                                                                           
+[<c00083f4>] (do_PrefetchAbort+0x0/0xa0) from [<c000e0d8>] (ret_from_exception+0
+x0/0x10)                                                                        
+Exception stack(0xc0a59fb0 to 0xc0a59ff8)                                       
+9fa0:                                     00000000 00000002 00000000 00000000   
+9fc0: 00000000 00000000 00000064 00000152 73d27040 00800000 00000000 73d26d7c   
+9fe0: 73d27960 73d26ba8 73d27554 0038c584 80000010 ffffffff                     
+ r8:73d27040 r7:00000152 r6:ffffffff r5:80000010 r4:0038c584                    
+Mem-info:                                                                       
+Normal per-cpu:                                                                 
+CPU    0: hi:   18, btch:   3 usd:   4                                          
+active_anon:10450 inactive_anon:5 isolated_anon:0                               
+ active_file:5 inactive_file:60 isolated_file:32                                
+ unevictable:0 dirty:0 writeback:0 unstable:0                                   
+ free:250 slab_reclaimable:212 slab_unreclaimable:1472                          
+ mapped:5 shmem:44 pagetables:346 bounce:0                                      
+Normal free:1000kB min:1016kB low:1268kB high:1524kB active_anon:41800kB inactiv
+e_anon:20kB active_file:20kB inactive_file:240kB unevictable:0kB isolated(anon):
+0kB isolated(file):128kB present:65024kB mlocked:0kB dirty:0kB writeback:0kB map
+ped:20kB shmem:176kB slab_reclaimable:848kB slab_unreclaimable:5888kB kernel_sta
+ck:2408kB pagetables:1384kB unstable:0kB bounce:0kB writeback_tmp:0kB pages_scan
+ned:332 all_unreclaimable? yes                                                  
+lowmem_reserve[]: 0 0                                                           
+Normal: 104*4kB 45*8kB 8*16kB 1*32kB 1*64kB 0*128kB 0*256kB 0*512kB 0*1024kB 0*2
+048kB 0*4096kB = 1000kB                                                         
+141 total pagecache pages                                                       
+0 pages in swap cache                                                           
+Swap cache stats: add 0, delete 0, find 0/0                                     
+Free swap  = 0kB                                                                
+Total swap = 0kB                                                                
+16384 pages of RAM                                                              
+606 free pages                                                                  
+1587 reserved pages                                                             
+1105 slab pages                                                                 
+136 pages shared                                                                
+0 pages swap cached                                                             
+[ pid ]   uid  tgid total_vm      rss cpu oom_adj oom_score_adj name            
+[  637]     0   637      267       29   0     -17         -1000 udevd           
+[  716]     0   716      267       27   0     -17         -1000 udevd           
+[  725]     0   725      267       29   0     -17         -1000 udevd           
+[ 1216]     0  1216      385       18   0       0             0 sysmgr          
+[ 1218]     0  1218      446       20   0       0             0 telnetd         
+[ 1285]     0  1285      533      129   0       0             0 lighttpd        
+[ 1298]     0  1298      443       17   0       0             0 crond           
+[ 1301]     0  1301      446       22   0       0             0 sh              
+[ 1313]     0  1313      446       21   0       0             0 sh              
+[ 1334]     0  1334      446       21   0       0             0 sh              
+[ 1435]     0  1435    20420      332   0       0             0 venc            
+[ 1443]     0  1443    18591      145   0       0             0 rtsp            
+[ 1454]     0  1454      447       22   0       0             0 sh              
+[ 1562]     0  1562      446       21   0       0             0 sh              
+[ 2604]     0  2604   489982     9566   0       0             0 onvifserver     
+Out of memory: Kill process 2604 (onvifserver) score 633 or sacrifice child     
+Killed process 2604 (onvifserver) total-vm:1959928kB, anon-rss:38252kB, file-rss
+:12kB                                                                           
+                                                                           

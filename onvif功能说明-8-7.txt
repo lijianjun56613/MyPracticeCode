@@ -1,0 +1,24 @@
+onvif（NXP裁剪版）功能简要说明：
+	1. 支持设备可探测发现，动态uuid，
+	2. Identification：
+		@1. 可获取设备IP地址
+		@2. 可获取设备MAC地址
+		@3. 可获取设备操作URI地址（改地址为onvif服务器的操作地址）
+	3. Time settings：
+		@1. 支持current time 获取（该时间为相机的localtime）
+		@2. 支持time zone的获取和设置
+		@3. 支持dayliht saving 的获取和设置
+		@4. 支持time setting mode的获取和设置
+		@5. 支持设备日期、时间手动模式的配置
+	4. Maintenance：
+		@1. 支持设备软复位和硬复位
+		@2. 支持设备reboot
+	5. Network settings：
+		@1. 支持DHCP模式获取和设置
+		@2. 支持IP地址获取和设置
+		@3. 支持subnet mask的获取和设置
+		@4. 支持gateway的获取和设置
+		@5. 支持hostname的获取
+		@6. 支持DNS的获取和设置
+		@7. 支持NTP server地址的获取和设置
+		@8. 支持discoverymode的获取
